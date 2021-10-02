@@ -30,15 +30,7 @@ public class KeyTask : Task
             _timeout = true;
         }
 
-        KeyCode pressedKey = KeyCode.None;
-        for (int i = 97; i < 123; i++)
-        {
-            if (Input.GetKeyDown((KeyCode) i))
-            {
-                pressedKey = (KeyCode) i;
-                break;
-            }
-        }
+        KeyCode pressedKey = InputExtension.FirstLetterDown();
 
         if (pressedKey != KeyCode.None)
         {

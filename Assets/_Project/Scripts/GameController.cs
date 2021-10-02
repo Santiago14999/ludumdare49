@@ -5,6 +5,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private UIController _uiController;
     [SerializeField] private TaskController _taskController;
     [SerializeField] private GameObject _gameScene;
+    [SerializeField] private ThrowController _throwController;
+
+    public event System.Action GameOver;
 
     public static GameController Instance
     {
@@ -18,29 +21,36 @@ public class GameController : MonoBehaviour
     }
     private static GameController _instance;
 
+    private void Awake()
+    {
+        Task.OnTaskResult += OnTaskResult;
+    }
+
     public void StartGame()
     {
         _uiController.CloseWindows();
         _gameScene.SetActive(true);
+        _throwController.InitializeProjectile();
+        _taskController.CreateRandomTask();
     }
 
     public void EndGame()
     {
         _uiController.OpenRestartWindow();
         _gameScene.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Task task = _taskController.CreateRandomTask();
-            task.OnTaskResult += OnTaskResult;
-        }
+        GameOver?.Invoke();
     }
 
     private void OnTaskResult(bool result)
     {
-        print(result);
+        if (result)
+        {
+            _throwController.ThrowToNext();
+            _taskController.CreateRandomTask();
+        }
+        else
+        {
+            EndGame();
+        }
     }
 }

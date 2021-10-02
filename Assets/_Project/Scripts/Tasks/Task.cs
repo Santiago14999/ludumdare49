@@ -2,11 +2,10 @@
 
 public abstract class Task : MonoBehaviour
 {
-    public event System.Action<bool> OnTaskResult;
+    public static event System.Action<bool> OnTaskResult;
 
     protected virtual void Awake()
     {
-        OnTaskResult += state => Destroy(gameObject);
         OnCreated();
     }
 
@@ -14,6 +13,7 @@ public abstract class Task : MonoBehaviour
 
     protected void TaskResult(bool result)
     {
+        Destroy(gameObject);
         OnTaskResult.Invoke(result);
     }
 }
