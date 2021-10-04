@@ -22,11 +22,13 @@ public class ExpressionTask : Task
     protected override void OnCreated()
     {
         _currentExpression = _expression.text;
-        _targetNumber = Random.Range(1, 100);
+        _targetNumber = Random.Range(2, 20);
         int leftOperand, rightOperand;
 
-        leftOperand = Random.Range(10, 40);
-        leftOperand = (_targetNumber + leftOperand) % 100;
+        leftOperand = Random.Range(1, 20);
+        leftOperand = (_targetNumber + leftOperand) % 20;
+        if (leftOperand == 0)
+            leftOperand = 1;
 
         if (leftOperand > _targetNumber)
         {
