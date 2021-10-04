@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RestartWindow : MonoBehaviour
@@ -8,7 +9,7 @@ public class RestartWindow : MonoBehaviour
 
     private void Awake()
     {
-        _restartButton.onClick.AddListener(() => GameController.Instance.StartGame());
+        _restartButton.onClick.AddListener(() => GameController.Instance.RestartGame());
         _menuButton.onClick.AddListener(() => UIController.Instance.OpenMenuWindow());
     }
 }

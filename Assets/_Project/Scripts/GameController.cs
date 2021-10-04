@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -6,7 +7,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private TaskController _taskController;
     [SerializeField] private GameObject _gameScene;
     [SerializeField] private ThrowController _throwController;
+    [SerializeField] private GameObject _handsPrefab;
+    [SerializeField] private Projectile _projectilePrefab;
 
+    private int _lives;
+    
     public event System.Action GameOver;
 
     public static GameController Instance
@@ -30,14 +35,20 @@ public class GameController : MonoBehaviour
     {
         _uiController.CloseWindows();
         _gameScene.SetActive(true);
+        _lives = 4;
         _throwController.InitializeProjectile();
         _taskController.CreateRandomTask();
+    }
+
+    public void RestartGame()
+    {
+        _throwController.InitHands(Instantiate(_handsPrefab), Instantiate(_projectilePrefab));
+        StartGame();
     }
 
     public void EndGame()
     {
         _uiController.OpenRestartWindow();
-        _gameScene.SetActive(false);
         GameOver?.Invoke();
     }
 
@@ -46,11 +57,33 @@ public class GameController : MonoBehaviour
         if (result)
         {
             _throwController.ThrowToNext();
-            _taskController.CreateRandomTask();
+            Invoke(nameof(CreateNextTask), 1f);
         }
         else
         {
-            EndGame();
+            OnFail();
+        }
+    }
+
+    private void CreateNextTask()
+    {
+        _taskController.CreateRandomTask();
+    }
+
+    private void OnFail()
+    {
+        if (_lives < 0)
+            return;
+            
+        _throwController.DestroyNextHands();
+        _lives--;
+        if (_lives == 0)
+        {
+            Invoke(nameof(EndGame), 2f);
+        }
+        else
+        {
+            Invoke(nameof(CreateNextTask), 1f);
         }
     }
 }

@@ -25,4 +25,14 @@ public class Hands : MonoBehaviour
     {
         _animator.Play(THROW_ANIMATION);
     }
+
+    public void DestroyHands()
+    {
+        Destroy(gameObject);
+    }
+
+    public void PlayHold()
+    {
+        _animator.Play("Hold");
+    }
 }
