@@ -391,7 +391,7 @@ MonoBehaviour:
   _minMaxTapCounter: {x: 8, y: 20}
   _timer: {fileID: 5518738756277561117}
   _counter: {fileID: 5811741568485650999}
-  _timeToTap: 4
+  _timeToTap: 6
   _tapButton: {fileID: 2706532921407542431}
 --- !u!1 &7087333808804283667
 GameObject:

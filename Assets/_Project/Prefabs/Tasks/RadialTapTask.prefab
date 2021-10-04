@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tapButton: {fileID: 7208347362781619133}
   _timer: {fileID: 895508229681103146}
-  _timeToTap: 6
+  _timeToTap: 9
   _greenZone: {fileID: 962362996539744209}
   _cursor: {fileID: 8573332617387092239}
   _minMaxGreenZoneAngle: {x: 20, y: 80}

@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
 
     private int _currentScore;
     private int _lives;
-    
+
     public event System.Action GameOver;
 
     public static GameController Instance
@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
+        Time.timeScale = 1f;
         _uiController.CloseWindows();
         _gameScene.SetActive(true);
         _lives = 4;
@@ -54,6 +55,7 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
+        Time.timeScale = 1f;
         _scoreText.transform.parent.gameObject.SetActive(false);
         _uiController.OpenRestartWindow();
         GameOver?.Invoke();
@@ -63,6 +65,8 @@ public class GameController : MonoBehaviour
     {
         if (result)
         {
+            Time.timeScale += .1f / Mathf.Pow(Mathf.Max(1f, _currentScore), .8f);
+            print(Time.timeScale);
             _throwController.ThrowToNext();
             _currentScore++;
             _scoreText.text = _currentScore.ToString();

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _expression: {fileID: 6868226494786558300}
   _timer: {fileID: 245639949938367329}
-  _timeToSolve: 5
+  _timeToSolve: 6
 --- !u!1 &2259949424377300938
 GameObject:
   m_ObjectHideFlags: 0

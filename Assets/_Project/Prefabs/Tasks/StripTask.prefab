@@ -373,5 +373,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetZone: {fileID: 5286923689257146471}
   _cursor: {fileID: 5286923689307006478}
-  _cursorSpeed: 4
+  _cursorSpeed: 3
   _maxX: 200
