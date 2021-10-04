@@ -5,6 +5,7 @@ public class Hands : MonoBehaviour
 {
     public Transform ProjectileTarget => _projectileTarget;
     [SerializeField] private Transform _projectileTarget;
+    [SerializeField] private ParticleSystem _explosionVFX;
 
     private Animator _animator;
     
@@ -28,7 +29,8 @@ public class Hands : MonoBehaviour
 
     public void DestroyHands()
     {
-        Destroy(gameObject);
+        Instantiate(_explosionVFX, _projectileTarget.position, Quaternion.identity);
+        Destroy(gameObject, .5f);
     }
 
     public void PlayHold()
