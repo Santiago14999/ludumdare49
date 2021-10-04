@@ -23,4 +23,17 @@ public static class InputExtension
                || Input.GetKeyDown(KeyCode.Mouse1)
                || Input.GetKeyDown(KeyCode.Return);
     }
+
+    public static KeyCode FirstNumberDown()
+    {
+        for (int i = 48; i < 58; i++)
+        {
+            if (Input.GetKeyDown((KeyCode) i))
+            {
+                return (KeyCode) i;
+            }
+        }
+        
+        return KeyCode.None;
+    }
 }
