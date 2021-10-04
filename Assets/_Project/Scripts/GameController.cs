@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private Projectile _projectilePrefab;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private AudioSource _explosion;
+    [SerializeField] private AudioSource _music;
 
     private int _currentScore;
     private int _lives;
@@ -62,6 +63,8 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1f;
         _uiController.OpenRestartWindow();
+        _music.Stop();
+        _music.Play();
         GameOver?.Invoke();
     }
 

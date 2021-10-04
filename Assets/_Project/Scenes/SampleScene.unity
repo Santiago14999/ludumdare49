@@ -1026,6 +1026,7 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 8664118026019264634, guid: 316dfd4caa9138d48bd89b8bbb86d9eb, type: 3}
   _scoreText: {fileID: 962501733}
   _explosion: {fileID: 17583377}
+  _music: {fileID: 345505492}
 --- !u!4 &491711060
 Transform:
   m_ObjectHideFlags: 0
