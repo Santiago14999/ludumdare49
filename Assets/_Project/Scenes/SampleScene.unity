@@ -3235,6 +3235,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tasks:
+  - {fileID: 5286923691190082764, guid: c9092fa4af3433b4dbdd1b24ab030797, type: 3}
+  - {fileID: 1636538076912514341, guid: 9d36c2d620d3d804eb1dfc1702f16370, type: 3}
+  - {fileID: 2581975171031348819, guid: b7e6931765c54e34097a757f5f49ccf2, type: 3}
+  - {fileID: 1010247257421628162, guid: d13cd928424dc3c4b865700b6b5de9ba, type: 3}
   - {fileID: 9086875081445457004, guid: 78ebe05442513a242b70ed198e498bfd, type: 3}
 --- !u!4 &2084300099
 Transform:
