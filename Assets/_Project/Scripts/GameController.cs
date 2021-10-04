@@ -11,9 +11,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _handsPrefab;
     [SerializeField] private Projectile _projectilePrefab;
     [SerializeField] private TMP_Text _scoreText;
+    [SerializeField] private AudioSource _explosion;
 
     private int _currentScore;
     private int _lives;
+    private bool _firstGame;
 
     public event System.Action GameOver;
 
@@ -31,11 +33,20 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        _firstGame = true;
         Task.OnTaskResult += OnTaskResult;
     }
 
     public void StartGame()
     {
+        if (_firstGame)
+        {
+            _firstGame = false;
+        }
+        else
+        {
+            _throwController.InitHands(Instantiate(_handsPrefab), Instantiate(_projectilePrefab));
+        }
         Time.timeScale = 1f;
         _uiController.CloseWindows();
         _gameScene.SetActive(true);
@@ -47,16 +58,9 @@ public class GameController : MonoBehaviour
         _taskController.CreateRandomTask();
     }
 
-    public void RestartGame()
-    {
-        _throwController.InitHands(Instantiate(_handsPrefab), Instantiate(_projectilePrefab));
-        StartGame();
-    }
-
     public void EndGame()
     {
         Time.timeScale = 1f;
-        _scoreText.transform.parent.gameObject.SetActive(false);
         _uiController.OpenRestartWindow();
         GameOver?.Invoke();
     }
@@ -78,6 +82,11 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void HideScore()
+    {
+        _scoreText.transform.parent.gameObject.SetActive(false);
+    }
+
     private void CreateNextTask()
     {
         _taskController.CreateRandomTask();
@@ -88,6 +97,7 @@ public class GameController : MonoBehaviour
         if (_lives < 0)
             return;
             
+        _explosion.Play();
         _throwController.DestroyNextHands();
         _lives--;
         if (_lives == 0)

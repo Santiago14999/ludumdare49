@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a0e7cb4db6470493047d27bf94e1bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundEffect: {fileID: 8300000, guid: 70a23b5f2f0f3384da676932e02bdd8b, type: 3}
   _targetZone: {fileID: 5286923689257146471}
   _cursor: {fileID: 5286923689307006478}
   _cursorSpeed: 3

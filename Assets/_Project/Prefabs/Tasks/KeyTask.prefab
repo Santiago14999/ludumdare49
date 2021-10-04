@@ -430,6 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5843e454beb94036b22186e72f13ed10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundEffect: {fileID: 8300000, guid: 70a23b5f2f0f3384da676932e02bdd8b, type: 3}
   _keyToPressLabel: {fileID: 5393290164667148379}
   _timerImage: {fileID: 4266330428460888472}
   _timeToPress: 3

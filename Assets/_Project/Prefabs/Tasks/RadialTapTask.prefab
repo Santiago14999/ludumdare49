@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb50dec596c4328a4c49d0c26dc2530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundEffect: {fileID: 8300000, guid: 70a23b5f2f0f3384da676932e02bdd8b, type: 3}
   _tapButton: {fileID: 7208347362781619133}
   _timer: {fileID: 895508229681103146}
   _timeToTap: 9

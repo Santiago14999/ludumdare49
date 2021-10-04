@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7097008566be41b4876aede4212fa30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundEffect: {fileID: 8300000, guid: 70a23b5f2f0f3384da676932e02bdd8b, type: 3}
   _expression: {fileID: 6868226494786558300}
   _timer: {fileID: 245639949938367329}
   _timeToSolve: 6

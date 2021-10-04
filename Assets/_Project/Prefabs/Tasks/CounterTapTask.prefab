@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809ce9f39e64f859ba8a00e2afc1aea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundEffect: {fileID: 8300000, guid: 70a23b5f2f0f3384da676932e02bdd8b, type: 3}
   _minMaxTapCounter: {x: 8, y: 20}
   _timer: {fileID: 5518738756277561117}
   _counter: {fileID: 5811741568485650999}

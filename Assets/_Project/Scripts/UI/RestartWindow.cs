@@ -9,7 +9,13 @@ public class RestartWindow : MonoBehaviour
 
     private void Awake()
     {
-        _restartButton.onClick.AddListener(() => GameController.Instance.RestartGame());
-        _menuButton.onClick.AddListener(() => UIController.Instance.OpenMenuWindow());
+        _restartButton.onClick.AddListener(() => GameController.Instance.StartGame());
+        _menuButton.onClick.AddListener(OpenMenu);
+    }
+
+    private void OpenMenu()
+    {
+        GameController.Instance.HideScore();
+        UIController.Instance.OpenMenuWindow();
     }
 }
