@@ -25,7 +25,7 @@ public class Hands : MonoBehaviour
 
     public void Throw()
     {
-        Instantiate(_correctVFX, _projectileTarget.position, Quaternion.identity);
+        Instantiate(_correctVFX);
         _animator.Play(THROW_ANIMATION);
     }
 
