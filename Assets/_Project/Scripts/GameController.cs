@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private ThrowController _throwController;
     [SerializeField] private GameObject _handsPrefab;
     [SerializeField] private Projectile _projectilePrefab;
+    [SerializeField] private TMP_Text _scoreText;
 
+    private int _currentScore;
     private int _lives;
     
     public event System.Action GameOver;
@@ -36,6 +39,9 @@ public class GameController : MonoBehaviour
         _uiController.CloseWindows();
         _gameScene.SetActive(true);
         _lives = 4;
+        _scoreText.transform.parent.gameObject.SetActive(true);
+        _scoreText.text = "0";
+        _currentScore = 0;
         _throwController.InitializeProjectile();
         _taskController.CreateRandomTask();
     }
@@ -48,6 +54,7 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
+        _scoreText.transform.parent.gameObject.SetActive(false);
         _uiController.OpenRestartWindow();
         GameOver?.Invoke();
     }
@@ -57,6 +64,8 @@ public class GameController : MonoBehaviour
         if (result)
         {
             _throwController.ThrowToNext();
+            _currentScore++;
+            _scoreText.text = _currentScore.ToString();
             Invoke(nameof(CreateNextTask), 1f);
         }
         else
