@@ -34,6 +34,11 @@ public class StripTask : Task
         {
             Submit();
         }
+
+        if (Time.time - _startTime >= 6f)
+        {
+            TaskResult(false);
+        }
     }
 
     private void Submit()
