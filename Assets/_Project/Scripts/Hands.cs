@@ -6,6 +6,7 @@ public class Hands : MonoBehaviour
     public Transform ProjectileTarget => _projectileTarget;
     [SerializeField] private Transform _projectileTarget;
     [SerializeField] private ParticleSystem _explosionVFX;
+    [SerializeField] private ParticleSystem _correctVFX;
 
     private Animator _animator;
     
@@ -24,6 +25,7 @@ public class Hands : MonoBehaviour
 
     public void Throw()
     {
+        Instantiate(_correctVFX, _projectileTarget.position, Quaternion.identity);
         _animator.Play(THROW_ANIMATION);
     }
 

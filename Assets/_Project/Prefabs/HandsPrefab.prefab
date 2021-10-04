@@ -186,7 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileTarget: {fileID: 7037596276701098823}
-  _explosionVFX: {fileID: 7831660030685198606, guid: 2ec3c531e58c0e34699e2718df63906e, type: 3}
+  _explosionVFX: {fileID: 205352612665019249, guid: b9df52a8e8d54274ca1345eb75dc2160, type: 3}
+  _correctVFX: {fileID: 7435234733212889183, guid: eff1eef8e476ac441999a4bc5e2134f1, type: 3}
 --- !u!95 &7037596276443133816
 Animator:
   serializedVersion: 3
@@ -219,7 +220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileTarget: {fileID: 7037596277035378112}
-  _explosionVFX: {fileID: 7831660030685198606, guid: 2ec3c531e58c0e34699e2718df63906e, type: 3}
+  _explosionVFX: {fileID: 205352612665019249, guid: b9df52a8e8d54274ca1345eb75dc2160, type: 3}
+  _correctVFX: {fileID: 7435234733212889183, guid: eff1eef8e476ac441999a4bc5e2134f1, type: 3}
 --- !u!95 &7037596277081534379
 Animator:
   serializedVersion: 3
@@ -252,7 +254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileTarget: {fileID: 7037596277074073625}
-  _explosionVFX: {fileID: 7831660030685198606, guid: 2ec3c531e58c0e34699e2718df63906e, type: 3}
+  _explosionVFX: {fileID: 205352612665019249, guid: b9df52a8e8d54274ca1345eb75dc2160, type: 3}
+  _correctVFX: {fileID: 7435234733212889183, guid: eff1eef8e476ac441999a4bc5e2134f1, type: 3}
 --- !u!95 &7037596276549187967
 Animator:
   serializedVersion: 3
@@ -285,7 +288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileTarget: {fileID: 7037596275870837644}
-  _explosionVFX: {fileID: 7831660030685198606, guid: 2ec3c531e58c0e34699e2718df63906e, type: 3}
+  _explosionVFX: {fileID: 205352612665019249, guid: b9df52a8e8d54274ca1345eb75dc2160, type: 3}
+  _correctVFX: {fileID: 7435234733212889183, guid: eff1eef8e476ac441999a4bc5e2134f1, type: 3}
 --- !u!1001 &7037596275410401164
 PrefabInstance:
   m_ObjectHideFlags: 0
